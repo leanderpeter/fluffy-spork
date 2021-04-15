@@ -43,8 +43,8 @@ jobs:
         pytest
     - name: Deploy to Heroku
       if: github.ref == 'refs/head/main' && job.status == 'success'
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-          heroku_email: "kontakt@leanderpeter.de"
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: ${{secrets.HEROKU_AUTH_TOKEN}}
+        heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+        heroku_email: "kontakt@leanderpeter.de"
